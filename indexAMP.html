@@ -1,0 +1,1081 @@
+<!DOCTYPE html >
+<html amp lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style amp-custom>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            color: #6c7279;
+            background-color: #ffffff;
+        }
+        body *,
+        body *:before,
+        body *:after {
+            box-sizing: border-box;
+        }
+        body .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        body header {
+            width: 100%;
+            height: 112px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        body header .header_inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 0;
+            border-bottom: 1px solid #515369;
+        }
+        body header .header_inner nav ul {
+            display: flex;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        body header .header_inner nav ul li {
+            margin-left: 50px;
+            opacity: 0.75;
+            text-decoration: none;
+            list-style-type: none;
+        }
+        body header .header_inner nav ul li a {
+            text-decoration: none;
+            color: #cbccd3;
+        }
+        body .intro {
+            height: 750px;
+            background: #31344e url('img/intro.jpg') center no-repeat;
+            background-size: cover;
+            padding-top: 112px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        body .intro .intro_inner {
+            width: 100%;
+            max-width: 970px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        body .intro .intro_inner h1 {
+            margin: 0 0 30px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 65px;
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        body .intro .intro_inner p {
+            margin-bottom: 60px;
+            font-size: 22px;
+            color: #ffffff;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        body .intro .intro_inner button {
+            display: inline-block;
+            vertical-align: top;
+            padding: 14px 40px;
+            border-radius: 2px;
+            border: 0;
+            font-family: 'Raleway', sans-serif;
+            font-size: 13px;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: #e84545;
+        }
+        body main .features {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 100px 0;
+        }
+        body main .features .features_item {
+            width: 33.33333%;
+            padding: 0px 40px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        body main .features .features_item amp-img {
+            margin-bottom: 25px;
+        }
+        body main .features .features_item h2 {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #2d3033;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        body main .features .features_item p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #6c7279;
+        }
+        body main .works {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        body main .works .works_item {
+            width: 25%;
+            height: 350px;
+            border-bottom: 1px solid #ffffff;
+            border-right: 1px solid #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        body main .works .works_item:hover .works_content {
+            opacity: 1;
+        }
+        body main .works .works_item amp-img {
+            min-width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            transform: translate3d(-50%, -50%, 0);
+        }
+        body main .works .works_item .works_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(232, 69, 69, 0.9);
+            opacity: 0;
+            transition: opacity 0.2s linear;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        body main .works .works_item .works_content h2 {
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+        body main .works .works_item .works_content p {
+            font-size: 14px;
+            color: #ffffff;
+        }
+        body main .team {
+            margin: 100px 0 70px;
+        }
+        body main .team .team_inner {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        body main .team .team_inner .team_item {
+            margin-bottom: 30px;
+            padding: 0 15px;
+            width: 25%;
+        }
+        body main .team .team_inner .team_item amp-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        body main .team .team_inner .team_item h2 {
+            margin-bottom: 5px;
+            font-size: 22px;
+            color: #2d3033;
+            font-weight: 600;
+        }
+        body main .team .team_inner .team_item h3 {
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #e84545;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        body main .team .team_inner .team_item p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #6c7279;
+        }
+        body main .team .team_inner .team_item .social {
+            display: flex;
+        }
+        body main .team .team_inner .team_item .social .social_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            margin-right: 4px;
+            border: 1px solid #e8ecee;
+        }
+        body main .team .team_inner .team_item .social .social_item .img_s {
+            margin-bottom: 0px;
+        }
+        body main .clients {
+            background-color: #53354a;
+            overflow: hidden;
+        }
+        body main .clients .clients_item {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        body main .clients .clients_item .clients_left {
+            width: 50%;
+            height: 500px;
+            position: relative;
+        }
+        body main .clients .clients_item .clients_left amp-img {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+        body main .clients .clients_item .clients_right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            padding-left: 80px;
+        }
+        body main .clients .clients_item .clients_right h3 {
+            font-family: 'Cardo', 'sans-serif';
+            font-style: italic;
+            font-size: 36px;
+            line-height: 1.2;
+            color: #ffffff;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        body main .clients .clients_item .clients_right p {
+            font-size: 13px;
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        body main .download {
+            margin: 90px 0;
+            text-align: center;
+        }
+        body main .download h2 {
+            margin-bottom: 10px;
+            color: #2d3033;
+            font-size: 28px;
+            font-weight: 300;
+        }
+        body main .download p {
+            margin-bottom: 30px;
+            font-size: 13px;
+            color: #2d3033;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        body main .download button {
+            display: inline-block;
+            vertical-align: top;
+            padding: 14px 40px;
+            border-radius: 2px;
+            border: 0;
+            font-family: 'Raleway', sans-serif;
+            font-size: 13px;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: #e84545;
+            min-width: 280px;
+        }
+        body footer {
+            background-color: #3a3e64;
+        }
+        body footer .footer_iner {
+            padding-top: 60px;
+            padding-bottom: 90px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        body footer .footer_iner .footer_item {
+            padding: 0 15px;
+            width: 33.33333%;
+            text-align: center;
+        }
+        body footer .footer_iner .footer_item h2 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+        body footer .footer_iner .footer_item address {
+            font-style: normal;
+            font-size: 14px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        body footer .footer_iner .footer_item .social {
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body footer .footer_iner .footer_item .social .social_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            margin-right: 4px;
+            border: 1px solid #e8ecee;
+        }
+        body footer .footer_iner .footer_item .social .social_item .img_s {
+            margin-bottom: 0px;
+        }
+        body footer .copyright {
+            background-color: #313454;
+            padding: 20px 0;
+        }
+        body footer .copyright p {
+            text-align: center;
+            font-size: 14px;
+            color: #808080;
+            line-height: 1.5;
+        }
+        body footer .copyright p span {
+            color: #ffffff;
+        }
+
+/**************************Адаптация*****************************/
+/************************* 768px-1023px *************************/
+        @media (min-width: 768px) and (max-width: 1023px){
+            body header .header_inner nav ul {
+                font-size: 10px;
+            }
+            body .intro .intro_inner h1 {
+                font-size: 35px;
+            }
+
+        }
+/************************* 480px-767px *************************/
+        @media (min-width: 480px) and (max-width: 767px){
+            body header .header_inner {
+                justify-content: center;
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            body header .header_inner nav {
+                margin-top: 10px;
+            }
+            body header .header_inner nav ul {
+                font-size: 10px;
+                padding-inline-start: 0px;
+            }
+            body header .header_inner nav ul li {
+                margin-left: 20px;
+                font-size: 10px;
+            }
+            body .intro {
+                height: 450px;
+            }
+            body .intro .intro_inner h1 {
+                font-size: 18px;
+            }
+            body .intro .intro_inner p {
+                font-size: 13px;
+            }
+            body main .features {
+                justify-content: center;
+                flex-direction: column;
+            }
+            body main .features .features_item {
+                width: 100%;
+                padding: 0px;
+            }
+            body main .works {
+                justify-content: center;
+                flex-direction: column;
+            }
+            body main .works .works_item {
+                width: 100%;
+            }
+            body main .team {
+                margin-top: 15px;
+            }
+            body main .team .team_inner {
+                justify-content: center;
+                flex-direction: column;
+            }
+            body main .team .team_inner .team_item {
+                width: 100%;
+                text-align: center;
+            }
+            body main .team .team_inner img {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            body main .team .team_inner .social {
+                justify-content: center;
+            }
+            body main .clients .clients_item {
+                justify-content: center;
+                flex-direction: column;
+            }
+            body main .clients .clients_item .clients_left {
+                width: 100%;
+            }
+            body main .clients .clients_item .clients_left img {
+                width: 100%;
+            }
+            body main .clients .clients_item .clients_right {
+                width: 100%;
+                padding-left: 0px;
+            }
+            body main .clients .clients_item .clients_right h3 {
+                font-size: 24px;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+            body main .clients .clients_item .clients_right p {
+                font-size: 10px;
+                text-align: center;
+            }
+            body main .download h2 {
+                font-size: 24px;
+            }
+            body footer .footer_iner {
+                padding-top: 30px;
+                padding-bottom: 45px;
+                justify-content: center;
+                flex-direction: column;
+            }
+            body footer .footer_iner .footer_item {
+                width: 100%;
+            }
+            body main .team .team_inner .team_item amp-img {
+                text-align: center;
+                display: inline-block;
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+        }
+
+/************************* <480px *************************/
+        @media screen and (max-width: 480px){
+            body header .header_inner {
+                justify-content: center;
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            body header .header_inner nav {
+                margin-top: 10px;
+            }
+            body header .header_inner nav ul {
+                font-size: 8px;
+                padding-inline-start: 0px;
+            }
+            body header .header_inner nav ul li {
+                margin-left: 20px;
+                font-size: 8px;
+            }
+            body .intro {
+                height: 450px;
+            }
+            body .intro .intro_inner h1 {
+                font-size: 15px;
+            }
+            body .intro .intro_inner p {
+                font-size: 10px;
+            }
+            body main .features {
+                justify-content: center;
+                flex-direction: column;
+            }
+            body main .features .features_item {
+                width: 100%;
+                padding: 0px;
+            }
+            body main .works {
+                justify-content: center;
+                flex-direction: column;
+            }
+            body main .works .works_item {
+                width: 100%;
+            }
+            body main .team {
+                margin-top: 15px;
+            }
+            body main .team .team_inner {
+                justify-content: center;
+                flex-direction: column;
+            }
+            body main .team .team_inner .team_item {
+                width: 100%;
+                text-align: center;
+            }
+            body main .team .team_inner img {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            body main .team .team_inner .social {
+                justify-content: center;
+            }
+            body main .clients .clients_item {
+                justify-content: center;
+                flex-direction: column;
+            }
+            body main .clients .clients_item .clients_left {
+                width: 100%;
+            }
+            body main .clients .clients_item .clients_left img {
+                width: 100%;
+            }
+            body main .clients .clients_item .clients_right {
+                width: 100%;
+                padding-left: 0px;
+            }
+            body main .clients .clients_item .clients_right h3 {
+                font-size: 24px;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+            body main .clients .clients_item .clients_right p {
+                font-size: 10px;
+                text-align: center;
+            }
+            body main .download h2 {
+                font-size: 24px;
+            }
+            body footer .footer_iner {
+                padding-top: 30px;
+                padding-bottom: 45px;
+                justify-content: center;
+                flex-direction: column;
+            }
+            body footer .footer_iner .footer_item {
+                width: 100%;
+            }
+            body main .team .team_inner .team_item amp-img {
+                text-align: center;
+                display: inline-block;
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+
+    <title>Task 11</title>
+    <!--    AMP version-->
+    <link rel="canonical" href="https://deqkem.github.io/">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <div class="header_inner">
+            <div class="header_logo">
+                <amp-img
+                        alt=""
+                        src="img/logo.png"
+                        width="189"
+                        height="24"
+                >
+                </amp-img>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href=“/x”>Features</a></li>
+                    <li><a href=“/y”>Works</a></li>
+                    <li><a href=“/z”>Our Team</a></li>
+                    <li><a href=“/z”>Testimonials</a></li>
+                    <li><a href=“/z”>Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class = "intro">
+    <div class = "intro_inner">
+        <h1>Your Favorite One Page<br>
+            Multi Purpose Template</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna<br>
+            vel scelerisque nisl consectetur et.
+        </p>
+        <button type="button">Find out more</button>
+    </div>
+</div>
+
+<main>
+
+    <div class="container">
+        <div class="features">
+            <div class="features_item">
+                <amp-img
+                        alt=""
+                        src="img/features/1.png"
+                        width="60"
+                        height="60"
+                        >
+                </amp-img>
+                <h2>Easily Customised</h2>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nuliam quis
+                    risus eget urna mallis ornare vel eu leo. Donec ullamcorper nulla</p>
+            </div>
+            <div class="features_item">
+                <amp-img
+                        alt=""
+                        src="img/features/2.png"
+                        width="73"
+                        height="60"
+                >
+                </amp-img>
+                <h2>Responsive Ready</h2>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nuliam quis
+                    risus eget urna mallis ornare vel eu leo. Donec ullamcorper nulla</p>
+            </div>
+            <div class="features_item">
+                <amp-img
+                        alt=""
+                        src="img/features/3.png"
+                        width="41"
+                        height="60"
+                >
+                </amp-img>
+                <h2>Modern Design</h2>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nuliam quis
+                    risus eget urna mallis ornare vel eu leo. Donec ullamcorper nulla</p>
+            </div>
+            <div class="features_item">
+                <amp-img
+                        alt=""
+                        src="img/features/4.png"
+                        width="56"
+                        height="60"
+                >
+                </amp-img>
+                <h2>Clean Code</h2>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nuliam quis
+                    risus eget urna mallis ornare vel eu leo. Donec ullamcorper nulla</p>
+            </div>
+            <div class="features_item">
+                <amp-img
+                        alt=""
+                        src="img/features/5.png"
+                        width="72"
+                        height="60"
+                >
+                </amp-img>
+                <h2>Ready to ship</h2>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nuliam quis
+                    risus eget urna mallis ornare vel eu leo. Donec ullamcorper nulla</p>
+            </div>
+            <div class="features_item">
+                <amp-img
+                        alt=""
+                        src="img/features/6.png"
+                        width="79"
+                        height="60"
+                >
+                </amp-img>
+                <h2>Download for here</h2>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nuliam quis
+                    risus eget urna mallis ornare vel eu leo. Donec ullamcorper nulla</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="works">
+        <div class="works_item">
+            <amp-img
+                    alt=""
+                    src="img/works/1.jpg"
+                    width="650"
+                    height="350"
+            >
+            </amp-img>
+            <div class="works_content">
+                <h2>Project Name</h2>
+                <p>User Interface Design</p>
+            </div>
+        </div>
+        <div class="works_item">
+            <amp-img
+                    alt=""
+                    src="img/works/2.jpg"
+                    width="650"
+                    height="350"
+            >
+            </amp-img>
+            <div class="works_content">
+                <h2>Project Name</h2>
+                <p>User Interface Design</p>
+            </div>
+        </div>
+        <div class="works_item">
+            <amp-img
+                    alt=""
+                    src="img/works/3.jpg"
+                    width="650"
+                    height="350"
+            >
+            </amp-img>
+            <div class="works_content">
+                <h2>Project Name</h2>
+                <p>User Interface Design</p>
+            </div>
+        </div>
+        <div class="works_item">
+            <amp-img
+                    alt=""
+                    src="img/works/4.jpg"
+                    width="553"
+                    height="350"
+            >
+            </amp-img>
+            <div class="works_content">
+                <h2>Project Name</h2>
+                <p>User Interface Design</p>
+            </div>
+        </div>
+        <div class="works_item">
+            <amp-img
+                    alt=""
+                    src="img/works/5.jpg"
+                    width="650"
+                    height="350"
+            >
+            </amp-img>
+            <div class="works_content">
+                <h2>Project Name</h2>
+                <p>User Interface Design</p>
+            </div>
+        </div>
+        <div class="works_item">
+            <amp-img
+                    alt=""
+                    src="img/works/6.jpg"
+                    width="650"
+                    height="350"
+            >
+            </amp-img>
+            <div class="works_content">
+                <h2>Project Name</h2>
+                <p>User Interface Design</p>
+            </div>
+        </div>
+        <div class="works_item">
+            <amp-img
+                    alt=""
+                    src="img/works/7.jpg"
+                    width="650"
+                    height="350"
+            >
+            </amp-img>
+            <div class="works_content">
+                <h2>Project Name</h2>
+                <p>User Interface Design</p>
+            </div>
+        </div>
+        <div class="works_item">
+            <amp-img
+                    alt=""
+                    src="img/works/8.jpg"
+                    width="553"
+                    height="350"
+            >
+            </amp-img>
+            <div class="works_content">
+                <h2>Project Name</h2>
+                <p>User Interface Design</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="team">
+        <div class="container">
+            <div class="team_inner">
+                <div class="team_item">
+                    <amp-img
+                            alt=""
+                            src="img/team/1.jpg"
+                            width="270"
+                            height="270"
+                    >
+                    </amp-img>
+                    <h2>Ruth Woods</h2>
+                    <h3>Founder, CEO</h3>
+                    <p>Fusce dapibas, tellus ac cursus commodo, tortor mauris condimentum nibh. ut fermentum massa
+                        justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam
+                        quis risus eget urna mollis ornare vel eu leo.</p>
+                    <div class="social">
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                    alt=""
+                                    src="img/social/facebook.png"
+                                    width="8"
+                                    height="18"
+                            >
+                            </amp-img>
+                        </a>
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                     alt=""
+                                     src="img/social/twitter.png"
+                                     width="20"
+                                     height="14"
+                            >
+                            </amp-img>
+                        </a>
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                     alt=""
+                                     src="img/social/linkedin.png"
+                                     width="16"
+                                     height="16"
+                            >
+                            </amp-img>
+                        </a>
+                    </div>
+                </div>
+                <div class="team_item">
+                    <amp-img
+                            alt=""
+                            src="img/team/2.jpg"
+                            width="270"
+                            height="270"
+                    >
+                    </amp-img>
+                    <h2>Timothy Reed</h2>
+                    <h3>Co-Founder, Developer</h3>
+                    <p>Fusce dapibas, tellus ac cursus commodo, tortor mauris condimentum nibh. ut fermentum massa
+                        justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam
+                        quis risus eget urna mollis ornare vel eu leo.</p>
+                    <div class="social">
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                     alt=""
+                                     src="img/social/facebook.png"
+                                     width="8"
+                                     height="18"
+                            >
+                            </amp-img>
+                        </a>
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                     alt=""
+                                     src="img/social/twitter.png"
+                                     width="20"
+                                     height="14"
+                            >
+                            </amp-img>
+                        </a>
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                     alt=""
+                                     src="img/social/linkedin.png"
+                                     width="16"
+                                     height="16"
+                            >
+                            </amp-img>
+                        </a>
+                    </div>
+                </div>
+                <div class="team_item">
+                    <amp-img
+                            alt=""
+                            src="img/team/3.jpg"
+                            width="270"
+                            height="270"
+                    >
+                    </amp-img>
+                    <h2>Victoria Valdez</h2>
+                    <h3>UI Designer</h3>
+                    <p>Fusce dapibas, tellus ac cursus commodo, tortor mauris condimentum nibh. ut fermentum massa
+                        justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam
+                        quis risus eget urna mollis ornare vel eu leo.</p>
+                    <div class="social">
+                        <a class="social_item" href="#">
+                            <img class="img_s" src="img/social/facebook.png" alt="">
+                        </a>
+                        <a class="social_item" href="#">
+                            <img class="img_s" src="img/social/twitter.png" alt="">
+                        </a>
+                        <a class="social_item" href="#">
+                            <img class="img_s" src="img/social/linkedin.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="team_item">
+                    <amp-img
+                            alt=""
+                            src="img/team/4.jpg"
+                            width="270"
+                            height="270"
+                    >
+                    </amp-img>
+                    <h2>Beverly Little</h2>
+                    <h3>Data Scientist</h3>
+                    <p>Fusce dapibas, tellus ac cursus commodo, tortor mauris condimentum nibh. ut fermentum massa
+                        justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam
+                        quis risus eget urna mollis ornare vel eu leo.</p>
+                    <div class="social">
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                     alt=""
+                                     src="img/social/facebook.png"
+                                     width="8"
+                                     height="18"
+                            >
+                            </amp-img>
+                        </a>
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                     alt=""
+                                     src="img/social/twitter.png"
+                                     width="20"
+                                     height="14"
+                            >
+                            </amp-img>
+                        </a>
+                        <a class="social_item" href="#">
+                            <amp-img class="img_s"
+                                     alt=""
+                                     src="img/social/linkedin.png"
+                                     width="16"
+                                     height="16"
+                            >
+                            </amp-img>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clients">
+        <div class="container">
+            <div class="clients_item">
+                <div class="clients_left">
+                    <amp-img
+                             alt=""
+                             src="img/clients/1.jpg"
+                             width="950"
+                             height="500"
+                    >
+                    </amp-img>
+                </div>
+                <div class="clients_right">
+                    <h3>"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean
+                        eu leo quam..."</h3>
+                    <p>Susan Sins, Interaction Designer at XYZ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="download">
+        <div class="container">
+            <h2>Are you Ready to Start? Download Now For Free!</h2>
+            <p>Fusce dapibus, tellus ac cursus commodo</p>
+            <button type="button">Download Here</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer_iner">
+            <div class="footer_item">
+                <h2>Location</h2>
+                <address>
+                    <p>
+                        3481 Melrose Place <br>
+                        Beverly Hills, CA 90210
+                    </p>
+                </address>
+            </div>
+
+            <div class="footer_item">
+                <h2>Share with love</h2>
+                <div class="social">
+                    <a class="social_item" href="#">
+                        <amp-img class="img_s"
+                                 alt=""
+                                 src="img/social/facebook.png"
+                                 width="8"
+                                 height="18"
+                        >
+                        </amp-img>
+                    </a>
+                    <a class="social_item" href="#">
+                        <amp-img class="img_s"
+                                 alt=""
+                                 src="img/social/twitter.png"
+                                 width="20"
+                                 height="14"
+                        >
+                        </amp-img>
+                    </a>
+                    <a class="social_item" href="#">
+                        <amp-img class="img_s"
+                                 alt=""
+                                 src="img/social/linkedin.png"
+                                 width="16"
+                                 height="16"
+                        >
+                        </amp-img>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer_item">
+                <h2>About ActiveBox</h2>
+                <address>
+                    <p>Cras justo odio dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus
+                        auctor fringilla.</p>
+                </address>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            <p>
+                Copyright © 2015 Activebox. All Rights Reserved<br>
+                Made <span>by Kamal Chanenan</span>
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
